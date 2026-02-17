@@ -599,7 +599,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -609,9 +610,11 @@ body {
 @keyframes fadeIn {
     from {
         opacity: 0;
+        backdrop-filter: blur(0);
     }
     to {
         opacity: 1;
+        backdrop-filter: blur(4px);
     }
 }
 
@@ -620,19 +623,20 @@ body {
 }
 
 .modal-content {
-    background: #1a1a2e;
-    border: 2px solid #533483;
-    border-radius: 8px;
-    padding: 30px;
-    max-width: 400px;
+    background: var(--background);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 35px;
+    max-width: 450px;
     width: 90%;
     animation: slideUp 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -641,20 +645,22 @@ body {
 }
 
 .modal-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #00d4ff;
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+    color: var(--primary);
+    font-weight: 700;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    color: #e0e0e0;
+    margin-bottom: 8px;
+    color: var(--text-primary);
     font-weight: 600;
+    font-size: 0.95rem;
 }
 
 .form-group input,
