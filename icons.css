@@ -1,0 +1,179 @@
+/* Icon System Configuration */
+
+:root {
+    --icon-size-sm: 16px;
+    --icon-size-md: 24px;
+    --icon-size-lg: 32px;
+    --icon-color: currentColor;
+}
+
+/* SVG Icon Styling */
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+    flex-shrink: 0;
+}
+
+.icon.sm {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+}
+
+.icon.lg {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+}
+
+.icon svg {
+    width: 100%;
+    height: 100%;
+    color: var(--icon-color);
+}
+
+/* Icon Button Styling */
+.icon-btn svg {
+    color: currentColor;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover svg {
+    transform: scale(1.1);
+}
+
+.icon-btn:active svg {
+    transform: scale(0.95);
+}
+
+/* Task Action Icons */
+.task-edit svg,
+.task-delete svg {
+    color: currentColor;
+    transition: all 0.2s ease;
+}
+
+.task-edit:hover svg,
+.task-delete:hover svg {
+    transform: scale(1.15);
+}
+
+/* Navigation Icons */
+.nav-btn svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    display: inline;
+    vertical-align: middle;
+}
+
+/* Sidebar Icons */
+.sidebar-btn svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    display: inline;
+    vertical-align: middle;
+}
+
+/* Search Icon */
+.search-wrapper::before {
+    content: '🔍';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+/* Status Icons */
+.task-completed::before {
+    content: '✓';
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.task-overdue::before {
+    content: '⚠️';
+    margin-right: 4px;
+}
+
+/* Animation Classes */
+@keyframes iconSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icon-loading {
+    animation: iconSpin 1s linear infinite;
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+.icon-bounce {
+    animation: iconBounce 0.6s ease-in-out;
+}
+
+@keyframes iconPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.icon-pulse {
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+/* Icon Colors */
+.icon-success {
+    color: #4caf50;
+}
+
+.icon-warning {
+    color: #ff9800;
+}
+
+.icon-danger {
+    color: #f44336;
+}
+
+.icon-info {
+    color: #00d4ff;
+}
+
+.icon-primary {
+    color: var(--primary);
+}
+
+.icon-secondary {
+    color: var(--secondary);
+}
+
+/* Responsive Icon Sizing */
+@media (max-width: 768px) {
+    :root {
+        --icon-size-sm: 14px;
+        --icon-size-md: 20px;
+        --icon-size-lg: 28px;
+    }
+    
+    .icon-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
