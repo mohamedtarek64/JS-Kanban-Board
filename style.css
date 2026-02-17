@@ -436,6 +436,11 @@ body {
     box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
 }
 
+.form-group select option {
+    background: #0f3460;
+    color: #e0e0e0;
+}
+
 .form-group textarea {
     resize: vertical;
     min-height: 80px;
