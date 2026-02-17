@@ -7,16 +7,51 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>⚡ Board</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-filter="all" title="Show all tasks">
+          📋 All Tasks
+        </button>
+        <button class="nav-btn" data-filter="assigned" title="Tasks assigned to you">
+          👤 My Tasks
+        </button>
+        <button class="nav-btn" data-filter="favorites" title="Favorite tasks">
+          ⭐ Favorites
+        </button>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <h3>Theme</h3>
+        <button class="sidebar-btn" id="themeDarkBtn" title="Dark theme">🌙 Dark</button>
+        <button class="sidebar-btn" id="themeLightBtn" title="Light theme">☀️ Light</button>
+      </div>
+      <div class="sidebar-section">
+        <h3>Help</h3>
+        <button class="sidebar-btn" id="shortcutsBtn" title="Keyboard shortcuts">⌨️ Shortcuts</button>
+        <button class="sidebar-btn" id="helpBtn" title="Help & About">❓ About</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
     <div class="board-container">
       <div class="top-bar">
-        <h1 class="board-title">Kanban Board</h1>
+        <div class="header-left">
+          <h1 class="board-title">✨ Kanban Board</h1>
+          <span class="board-subtitle" id="boardStats">Loading...</span>
+        </div>
         <div class="top-controls">
-          <input
-            type="text"
-            id="searchInput"
-            class="search-bar"
-            placeholder="🔍 Search tasks..."
-          />
+          <div class="search-wrapper">
+            <input
+              type="text"
+              id="searchInput"
+              class="search-bar"
+              placeholder="🔍 Search or create task... (type + enter)"
+            />
+          </div>
           <div class="button-group">
             <button id="undoBtn" class="icon-btn" title="Undo (Ctrl+Z)">
               ↶
@@ -36,10 +71,23 @@
           </div>
         </div>
       </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-view="all">All Tasks</button>
+        <button class="filter-tab" data-view="today">Due Today</button>
+        <button class="filter-tab" data-view="overdue">🔴 Overdue</button>
+        <button class="filter-tab" data-view="high-priority">⚠️ High Priority</button>
+      </div>
+
       <div class="board">
         <!-- Columns will be dynamically generated -->
       </div>
     </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
     <script src="script.js"></script>
   </body>
 </html>
