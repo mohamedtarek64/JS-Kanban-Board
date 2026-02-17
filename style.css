@@ -623,10 +623,10 @@ body {
 .form-group select {
     width: 100%;
     padding: 10px;
-    background: #0f3460;
-    border: 1px solid #533483;
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
-    color: #e0e0e0;
+    color: var(--text-primary);
     font-family: inherit;
 }
 
@@ -634,13 +634,130 @@ body {
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #00d4ff;
+    border-color: var(--primary);
     box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
 }
 
 .form-group select option {
-    background: #0f3460;
-    color: #e0e0e0;
+    background: var(--background-secondary);
+    color: var(--text-primary);
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    pointer-events: none;
+}
+
+.toast {
+    background: var(--background-secondary);
+    color: var(--text-primary);
+    padding: 16px 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideInRight 0.3s ease;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toast.success {
+    border-left-color: var(--success);
+}
+
+.toast.error {
+    border-left-color: var(--danger);
+}
+
+.toast.warning {
+    border-left-color: var(--warning);
+}
+
+.toast.info {
+    border-left-color: var(--primary);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
+.toast.removing {
+    animation: slideOutRight 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .board-container {
+        margin-left: 200px;
+        padding: 20px;
+    }
+    
+    .top-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header-left,
+    .top-controls {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        position: absolute;
+        left: -240px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+    
+    .board-container {
+        margin-left: 0;
+    }
+    
+    .board {
+        grid-template-columns: 1fr;
+    }
+    
+    .top-controls {
+        flex-direction: column;
+    }
 }
 
 .form-group textarea {
