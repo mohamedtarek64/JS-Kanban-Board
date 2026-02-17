@@ -250,6 +250,52 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
     min-height: 600px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.filter-tab {
+    background: var(--background-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.filter-tab:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filter-tab.active {
+    background: var(--primary);
+    color: var(--background);
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
 }
 
 .column {
