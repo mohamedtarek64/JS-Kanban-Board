@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Kanban Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="board-container">
+      <div class="top-bar">
+        <h1 class="board-title">Kanban Board</h1>
+        <div class="top-controls">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-bar"
+            placeholder="🔍 Search tasks..."
+          />
+          <div class="button-group">
+            <button id="undoBtn" class="icon-btn" title="Undo (Ctrl+Z)">
+              ↶
+            </button>
+            <button id="redoBtn" class="icon-btn" title="Redo (Ctrl+Y)">
+              ↷
+            </button>
+            <button id="statsBtn" class="icon-btn" title="Show Statistics">
+              📊
+            </button>
+            <button id="exportBtn" class="icon-btn" title="Export Board">
+              ⬇
+            </button>
+            <button id="importBtn" class="icon-btn" title="Import Board">
+              ⬆
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="board">
+        <!-- Columns will be dynamically generated -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
