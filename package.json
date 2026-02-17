@@ -1,0 +1,45 @@
+{
+  "name": "kanban-board",
+  "version": "1.0.0",
+  "description": "A modern, feature-rich Kanban board application for task management",
+  "type": "module",
+  "main": "script.js",
+  "author": "Developer",
+  "license": "MIT",
+  "keywords": [
+    "kanban",
+    "task-management",
+    "project-management",
+    "drag-and-drop",
+    "vanilla-javascript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "start": "open index.html"
+  },
+  "features": [
+    "Drag and drop task management",
+    "Task creation, editing, and deletion",
+    "Priority levels (High, Medium, Low)",
+    "Due date management",
+    "Search and filter functionality",
+    "Undo/Redo history",
+    "Auto-save to localStorage",
+    "Export/Import board data",
+    "Dark/Light theme switching",
+    "Responsive design",
+    "Real-time statistics"
+  ],
+  "files": [
+    "index.html",
+    "style.css",
+    "script.js",
+    "icons/",
+    "assets/",
+    "README.md"
+  ]
+}
